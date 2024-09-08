@@ -5,25 +5,77 @@ using UnityEngine;
 public class State : MonoBehaviour
 {
     [SerializeField] private Transform[] target;
-    [SerializeField] private bool isStateFinal;
+    [SerializeField] public bool isStateInicial;
+    [SerializeField] public bool isStateFinal;
+    [SerializeField] private float up; // 0
+    [SerializeField] private float bottom; // 1
+    [SerializeField] private float left; // 2
+    [SerializeField] private float right; // 3
+    public int Aleatorio { get; set; }
+    public float Reforco { get; set; }
 
-    public GameObject NovoEstado()
+    public State NovoEstado()
     {
         if (target == null || target.Length <= 0) 
         {
             return null;
         }
-        int random;
         while (true) 
         {
-            random = Random.Range(0, 4);
-            Debug.Log(random);
-            if (target[random]) 
+
+            Aleatorio = Random.Range(0, 4);
+            if (target[Aleatorio]) 
             {
-                return target[random].gameObject;
+                return target[Aleatorio].GetComponent<State>();
             }
         } 
     }
-    
+
+    public float MaxReforco()
+    {
+        return Mathf.Max(up, bottom, left, right);
+    }
+
+    public float AcaoTomada()
+    {
+        float acao;
+        if (Aleatorio == 0)
+        {
+            acao = up;
+        }
+        else if (Aleatorio == 1)
+        {
+            acao = bottom;
+        }else if(Aleatorio == 2)
+        {
+            acao = left;
+        }
+        else
+        {
+            acao = right;
+        }
+        return acao;
+    }
+
+    public void AtualizarAcaoTomada(float novoValor)
+    {
+        if (Aleatorio == 0)
+        {
+            up = novoValor;
+        }
+        else if (Aleatorio == 1)
+        {
+            bottom = novoValor;
+        }
+        else if (Aleatorio == 2)
+        {
+            left = novoValor;
+        }
+        else
+        {
+            right = novoValor;
+        }
+    }
+
 
 }

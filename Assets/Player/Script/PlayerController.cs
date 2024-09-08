@@ -13,17 +13,17 @@ public class PlayerController : MonoBehaviour
     private bool bottom;
     private bool left;
     private bool right;
-    private float raio = 0;
+    private readonly float raio = 0.1f;
 
     private void Awake()
     {
-        Debug.Log("Awake");
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Awake");
+
     }
 
     // Update is called once per frame
@@ -46,12 +46,14 @@ public class PlayerController : MonoBehaviour
 
     public void MovimentarCarroAutonomo()
     {
+        
         if (target == null)
         {
             return;
         }
-        else if (Vector3.Distance(target.position, transform.position) <= raio)
+        if (Math.Round(Vector3.Distance(target.position, transform.position), 1) <= raio)
         {
+            target = null;
             return;
         }
         if (Math.Abs(target.position.x - transform.position.x) >= raio)
