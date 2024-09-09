@@ -102,9 +102,10 @@ public class StateController : MonoBehaviour
             cont = 0;
             epocas++;
             action = () => Wait(state);
-            return;
         }
-
-        action = Wait;
+        else
+        {
+            action = Wait;
+        }
     }
 }
