@@ -5417,7 +5417,7 @@ MonoBehaviour:
   estadoAtual: {fileID: 118818397}
   player: {fileID: 1433183269}
   cont: 0
-  maxCont: 100
+  maxCont: 1
   estadoFinal: {fileID: 1224607177}
   containerState: {fileID: 1308969157}
   allStates: []
@@ -23662,7 +23662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -81, y: -106}
+  m_AnchoredPosition: {x: -81, y: 0}
   m_SizeDelta: {x: 61.350586, y: 56.447815}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084100968

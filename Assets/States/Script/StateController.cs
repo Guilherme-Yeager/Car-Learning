@@ -6,8 +6,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
+
 public class StateController : MonoBehaviour
 {
+    public static StateController instace;
     [SerializeField] private State estadoAtual;
     [SerializeField] private PlayerController player;
     [SerializeField] private int cont;
@@ -19,9 +21,13 @@ public class StateController : MonoBehaviour
     private Action action;
     private const float alpha = 0.3f;
     private const float gama = 0.8f;
+    private const int maxEpocas = 2;
+
+    public int GetEpocas { get => epocas; }
 
     private void Start()
     {
+        instace = this;
         estadoFinal.isStateFinal = true;
         estadoAtual.isStateInicial = true;
         estadoFinal.Reforco = 10;
@@ -39,7 +45,7 @@ public class StateController : MonoBehaviour
             return;
         }
         cont++;
-        if (cont == maxCont)
+        if (cont >= maxCont)
         {
             action = null;
             cont = 0;
@@ -53,7 +59,7 @@ public class StateController : MonoBehaviour
             return;
         }
         cont++;
-        if (cont == maxCont)
+        if (cont >= maxCont)
         {
             estadoAtual = allStates[UnityEngine.Random.Range(0, allStates.Count)]; // [0, 9)
             state.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
@@ -66,7 +72,7 @@ public class StateController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(epocas != 2)
+        if(epocas != maxEpocas)
         {
             if (action == null)
             {
@@ -77,7 +83,6 @@ public class StateController : MonoBehaviour
                 action?.Invoke();
             }
         }
-
     }
     public void Qlearning() 
     {
@@ -101,10 +106,19 @@ public class StateController : MonoBehaviour
         {
             cont = 0;
             epocas++;
+            Debug.Log(epocas);
+            if (epocas == maxEpocas)
+            {
+                Debug.Log("Salvou");
+                Xml xml = new Xml();
+                xml.SalvarTabelaQ(containerState.GetComponentsInChildren<State>().ToList());
+            }
             action = () => Wait(state);
-            return;
+        }
+        else
+        {
+            action = Wait;
         }
 
-        action = Wait;
     }
 }

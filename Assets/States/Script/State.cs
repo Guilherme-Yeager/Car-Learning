@@ -7,10 +7,10 @@ public class State : MonoBehaviour
     [SerializeField] private Transform[] target;
     [SerializeField] public bool isStateInicial;
     [SerializeField] public bool isStateFinal;
-    [SerializeField] private float up; // 0
-    [SerializeField] private float bottom; // 1
-    [SerializeField] private float left; // 2
-    [SerializeField] private float right; // 3
+    [SerializeField] public float up; // 0
+    [SerializeField] public float bottom; // 1
+    [SerializeField] public float left; // 2
+    [SerializeField] public float right; // 3
     public int Aleatorio { get; set; }
     public float Reforco { get; set; }
 
