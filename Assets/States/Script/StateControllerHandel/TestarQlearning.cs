@@ -13,9 +13,8 @@ public class TestarQlearning
 
     public void Testar()
     {
-
+	// Agora vai
     }
-
 
 
 }
