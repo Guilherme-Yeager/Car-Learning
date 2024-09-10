@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -18,15 +17,28 @@ public class StateController : MonoBehaviour
     [SerializeField] private GameObject containerState;
     [SerializeField] private List<State> allStates;
     [SerializeField] private int epocas;
-    private Action action;
-    private const float alpha = 0.3f;
-    private const float gama = 0.8f;
-    private const int maxEpocas = 2;
+    [SerializeField] private int estadoTesteInicial;
 
-    public int GetEpocas { get => epocas; }
+    public Action action, inicarQlearningAction;
+    public bool podeClicar;
+
+    public int Epocas { get => epocas; set => epocas = value; }
+    public State EstadoAtual { get => estadoAtual; set => estadoAtual = value; }
+    public State EstadoFinal { get => estadoFinal; }
+    public PlayerController Player { get => player; }
+    public int Cont { get => cont; set => cont = value; }
+    public int MaxCont { get => maxCont; set => maxCont = value; }
+    public GameObject ContainerState { get => containerState; }
+    public List<State> AllStates { get => allStates; }
+    private Qlearning q;
+    private TestarQlearning t;
+
+
 
     private void Start()
     {
+        q = new Qlearning(this);
+        t = new TestarQlearning(this);
         instace = this;
         estadoFinal.isStateFinal = true;
         estadoAtual.isStateInicial = true;
@@ -35,90 +47,23 @@ public class StateController : MonoBehaviour
         allStates = allStates.Where(s => s.isStateFinal == false).ToList();
         estadoAtual.GetComponent<SpriteRenderer>().color = Color.blue;
         player.Target(estadoAtual.transform);
-        action = Wait;
+        action = q.Wait;
     }
 
-    public void Wait()
-    {
-        if (player.target != null)
-        {
-            return;
-        }
-        cont++;
-        if (cont >= maxCont)
-        {
-            action = null;
-            cont = 0;
-        }
-    }
-
-    public void Wait(State state)
-    {
-        if (player.target != null)
-        {
-            return;
-        }
-        cont++;
-        if (cont >= maxCont)
-        {
-            estadoAtual = allStates[UnityEngine.Random.Range(0, allStates.Count)]; // [0, 9)
-            state.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-            estadoAtual.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-            player.Target(estadoAtual.transform);
-            cont = 0;
-            action = Wait;
-        }
-    }
-
+    
     private void FixedUpdate()
     {
-        if(epocas != maxEpocas)
-        {
-            if (action == null)
-            {
-                Qlearning();
-            }
-            else
-            {
-                action?.Invoke();
-            }
-        }
+        inicarQlearningAction?.Invoke();
     }
-    public void Qlearning() 
+
+    public void IniciarAprendizado()
+    {
+        q.IniciarAprendizado();
+    }
+
+    public void Testar()
     {
 
-        if (estadoAtual == null) 
-        {
-            return;
-        }
-        cont = 50;
-        State state = estadoAtual.NovoEstado();
-
-        float novoValor = alpha * (state.Reforco + (gama * state.MaxReforco()) - estadoAtual.AcaoTomada());
-        estadoAtual.AtualizarAcaoTomada(novoValor);
-
-        estadoAtual.GetComponent<SpriteRenderer>().color = Color.white;
-        estadoAtual = state;
-        estadoAtual.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-        player.Target(state.transform);
-
-        if (state.isStateFinal)
-        {
-            cont = 0;
-            epocas++;
-            Debug.Log(epocas);
-            if (epocas == maxEpocas)
-            {
-                Debug.Log("Salvou");
-                Xml xml = new Xml();
-                xml.SalvarTabelaQ(containerState.GetComponentsInChildren<State>().ToList());
-            }
-            action = () => Wait(state);
-        }
-        else
-        {
-            action = Wait;
-        }
-
     }
+
 }

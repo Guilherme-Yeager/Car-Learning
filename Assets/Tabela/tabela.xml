@@ -1,69 +1,70 @@
-<!--Verenice :)-->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <States>
-  <State name="State (1)" initial="Initial">
+  <State name="State (0)" initial="Initial">
     <Up>0</Up>
+    <Bottom>0,002156545</Bottom>
+    <Left>0</Left>
+    <Right>0,01631509</Right>
+    <Reinforcement>0</Reinforcement>
+  </State>
+  <State name="State (1)">
+    <Up>0,004147202</Up>
     <Bottom>0</Bottom>
     <Left>0</Left>
     <Right>0</Right>
-    <Reforco>0</Reforco>
+    <Reinforcement>0</Reinforcement>
   </State>
   <State name="State (2)">
-    <Up>0</Up>
+    <Up>0,003706602</Up>
     <Bottom>0</Bottom>
     <Left>0</Left>
-    <Right>0</Right>
-    <Reforco>0</Reforco>
+    <Right>0,01728001</Right>
+    <Reinforcement>0</Reinforcement>
   </State>
   <State name="State (3)">
     <Up>0</Up>
-    <Bottom>0</Bottom>
-    <Left>0</Left>
-    <Right>0</Right>
-    <Reforco>0</Reforco>
+    <Bottom>0,06912001</Bottom>
+    <Left>0,00069673</Left>
+    <Right>0,06787066</Right>
+    <Reinforcement>0</Reinforcement>
   </State>
   <State name="State (4)">
-    <Up>0</Up>
+    <Up>0,04838401</Up>
     <Bottom>0</Bottom>
     <Left>0</Left>
-    <Right>0,1728</Right>
-    <Reforco>0</Reforco>
+    <Right>3</Right>
+    <Reinforcement>0</Reinforcement>
   </State>
   <State name="State (5)">
     <Up>0</Up>
-    <Bottom>0</Bottom>
-    <Left>0</Left>
-    <Right>0</Right>
-    <Reforco>0</Reforco>
+    <Bottom>0,006635522</Bottom>
+    <Left>-0,008294401</Left>
+    <Right>0,37872</Right>
+    <Reinforcement>0</Reinforcement>
   </State>
   <State name="State (6)">
     <Up>0</Up>
-    <Bottom>0</Bottom>
-    <Left>0</Left>
-    <Right>0,504</Right>
-    <Reforco>0</Reforco>
-  </State>
-  <State name="State (7)">
-    <Up>0</Up>
-    <Bottom>0,504</Bottom>
-    <Left>0</Left>
+    <Bottom>0,4493521</Bottom>
+    <Left>0,01631509</Left>
     <Right>0</Right>
-    <Reforco>0</Reforco>
+    <Reinforcement>0</Reinforcement>
   </State>
-  <State name="State (8)" final="Final">
+  <State name="State (7)" final="Final">
     <Up>0</Up>
     <Bottom>0</Bottom>
     <Left>0</Left>
     <Right>0</Right>
-    <Reforco>10</Reforco>
+    <Reinforcement>10</Reinforcement>
   </State>
-  <State name="State (9)">
-    <Up>0</Up>
-    <Bottom>2,1</Bottom>
-    <Left>0,1728</Left>
+  <State name="State (8)">
+    <Up>0,07015681</Up>
+    <Bottom>2,37</Bottom>
+    <Left>0,06518017</Left>
     <Right>0</Right>
-    <Reforco>0</Reforco>
+    <Reinforcement>0</Reinforcement>
   </State>
-  <Epoca>
-    <Quantidade>2</Quantidade>
-  </Epoca>
+  <Epoch>
+    <Quantity>2</Quantity>
+  </Epoch>
 </States>
+<!--Verenice :)-->

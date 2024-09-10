@@ -8,7 +8,7 @@ public class Xml
     {
         XmlTextWriter w = new XmlTextWriter(@"..\Car-Learning\Assets\Tabela\tabela.xml", null);
         w.Formatting = Formatting.Indented;
-        w.WriteComment("Verenice :)");
+        w.WriteRaw("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>");
         w.WriteStartElement("States");
         foreach (State s in states)
         {
@@ -28,13 +28,14 @@ public class Xml
             w.WriteElementString("Bottom", s.bottom.ToString());
             w.WriteElementString("Left", s.left.ToString());
             w.WriteElementString("Right", s.right.ToString());
-            w.WriteElementString("Reforco", s.Reforco.ToString());
+            w.WriteElementString("Reinforcement", s.Reforco.ToString());
             w.WriteEndElement();
         }
-        w.WriteStartElement("Epoca");
-        w.WriteElementString("Quantidade", instace.GetEpocas.ToString());
+        w.WriteStartElement("Epoch");
+        w.WriteElementString("Quantity", instace.Epocas.ToString());
         w.WriteEndElement();
         w.WriteEndElement();
+        w.WriteComment("Verenice :)");
         w.Close();
     }
 }
