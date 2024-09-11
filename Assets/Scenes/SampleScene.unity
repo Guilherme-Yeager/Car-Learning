@@ -5423,7 +5423,8 @@ MonoBehaviour:
   allStates: []
   epocas: 0
   estadoTesteInicial: 5
-  podeClicar: 0
+  btAprender: {fileID: 2084100968}
+  btTestar: {fileID: 1614293943}
 --- !u!4 &923187393
 Transform:
   m_ObjectHideFlags: 0
@@ -19601,8 +19602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc27932c5c79a934991d7915aa6f528c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 9
-  speedY: 0
+  speed: 10
   target: {fileID: 0}
 --- !u!212 &1433183270
 SpriteRenderer:
@@ -20884,7 +20884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -337, y: -62}
+  m_AnchoredPosition: {x: -339.2, y: -56.5}
   m_SizeDelta: {x: 202.1294, y: 56.4478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614293943
@@ -20926,7 +20926,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1614293944}
   m_OnClick:
     m_PersistentCalls:
@@ -23935,7 +23935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -112.3, y: -62.8}
+  m_AnchoredPosition: {x: -124.1, y: -56.7}
   m_SizeDelta: {x: 202.1294, y: 56.4478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084100968

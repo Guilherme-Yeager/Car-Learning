@@ -2,50 +2,50 @@
 <States>
   <State name="State (0)" initial="Initial">
     <Up>0</Up>
-    <Bottom>0,002156545</Bottom>
+    <Bottom>0,02436567</Bottom>
     <Left>0</Left>
-    <Right>0,01631509</Right>
+    <Right>0,01489551</Right>
     <Reinforcement>0</Reinforcement>
   </State>
   <State name="State (1)">
-    <Up>0,004147202</Up>
+    <Up>0,02433855</Up>
     <Bottom>0</Bottom>
     <Left>0</Left>
-    <Right>0</Right>
+    <Right>0,4191617</Right>
     <Reinforcement>0</Reinforcement>
   </State>
   <State name="State (2)">
-    <Up>0,003706602</Up>
-    <Bottom>0</Bottom>
+    <Up>0,004565695</Up>
+    <Bottom>0,06787066</Bottom>
     <Left>0</Left>
-    <Right>0,01728001</Right>
+    <Right>0,08084564</Right>
     <Reinforcement>0</Reinforcement>
   </State>
   <State name="State (3)">
     <Up>0</Up>
-    <Bottom>0,06912001</Bottom>
-    <Left>0,00069673</Left>
-    <Right>0,06787066</Right>
+    <Bottom>0,08020636</Bottom>
+    <Left>0,004301709</Left>
+    <Right>0,0826977</Right>
     <Reinforcement>0</Reinforcement>
   </State>
   <State name="State (4)">
-    <Up>0,04838401</Up>
+    <Up>0,08084748</Up>
     <Bottom>0</Bottom>
-    <Left>0</Left>
-    <Right>3</Right>
+    <Left>0,07519721</Left>
+    <Right>2,307541</Right>
     <Reinforcement>0</Reinforcement>
   </State>
   <State name="State (5)">
-    <Up>0</Up>
-    <Bottom>0,006635522</Bottom>
-    <Left>-0,008294401</Left>
-    <Right>0,37872</Right>
+    <Up>0,01488723</Up>
+    <Bottom>0,425731</Bottom>
+    <Left>0,02431942</Left>
+    <Right>0,4379019</Right>
     <Reinforcement>0</Reinforcement>
   </State>
   <State name="State (6)">
     <Up>0</Up>
-    <Bottom>0,4493521</Bottom>
-    <Left>0,01631509</Left>
+    <Bottom>0,4372195</Bottom>
+    <Left>0,01530955</Left>
     <Right>0</Right>
     <Reinforcement>0</Reinforcement>
   </State>
@@ -57,14 +57,14 @@
     <Reinforcement>10</Reinforcement>
   </State>
   <State name="State (8)">
-    <Up>0,07015681</Up>
-    <Bottom>2,37</Bottom>
-    <Left>0,06518017</Left>
+    <Up>0,08777723</Up>
+    <Bottom>2,289</Bottom>
+    <Left>0,08092369</Left>
     <Right>0</Right>
     <Reinforcement>0</Reinforcement>
   </State>
   <Epoch>
-    <Quantity>2</Quantity>
+    <Quantity>12</Quantity>
   </Epoch>
 </States>
 <!--Verenice :)-->

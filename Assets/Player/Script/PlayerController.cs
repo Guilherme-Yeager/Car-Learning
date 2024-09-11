@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speedX;
-    [SerializeField] private float speedY;
+    public static PlayerController instacePlayer;
+    [SerializeField] private float speed;
     private Action action;
     public Transform target;
     private bool up;
@@ -17,19 +17,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        instacePlayer = this;
     }
 
     private void FixedUpdate()
@@ -84,19 +72,19 @@ public class PlayerController : MonoBehaviour
         // Position - Ariana Grande?
         if (left && !right)
         {
-            transform.position = new Vector3(transform.position.x - (speedX * Time.deltaTime), transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x - (speed * Time.deltaTime), transform.position.y, 0);
         }
         if (right && !left)
         {
-            transform.position = new Vector3(transform.position.x + (speedX * Time.deltaTime), transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x + (speed * Time.deltaTime), transform.position.y, 0);
         }
         if (up && !bottom)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + (speedX * Time.deltaTime), 0);
+            transform.position = new Vector3(transform.position.x, transform.position.y + (speed * Time.deltaTime), 0);
         }
         if (bottom && !up)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y - (speedX * Time.deltaTime), 0);
+            transform.position = new Vector3(transform.position.x, transform.position.y - (speed * Time.deltaTime), 0);
         }
         // Euler
         if (left && (!up && !right && !bottom))

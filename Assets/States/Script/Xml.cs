@@ -32,7 +32,7 @@ public class Xml
             w.WriteEndElement();
         }
         w.WriteStartElement("Epoch");
-        w.WriteElementString("Quantity", instace.Epocas.ToString());
+        w.WriteElementString("Quantity", instaceStateController.Epocas.ToString());
         w.WriteEndElement();
         w.WriteEndElement();
         w.WriteComment("Verenice :)");
